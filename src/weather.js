@@ -47,14 +47,15 @@ class Weather extends Component {
         return (
             <div className="container">
                 <div className="header">
-                    <h1 className="title">Weather Report+</h1>
+                    <h1 className="title">Weather Report</h1>
                         <form>
                             <input type="text" id="city" placeholder="enter city" 
                                     value={this.state.city} onChange={this.handleOnChange}/><br/>
                             <button className="button" onClick={this.handleOnClick}>Submit</button>
                         </form>
                 </div>
-                <DisplayResults data={this.state.data} moredata={this.state.moredata} weather={this.state.weather}/>
+                <DisplayResults data={this.state.data} moredata={this.state.moredata} 
+                weather={this.state.weather}/>
             </div>
         );
     }

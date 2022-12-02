@@ -8,43 +8,43 @@ function DisplayResults(props) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     // const iconurl = `http://openweathermap.org/img/wn/${data !== "" ? data.weather[0].icon : null}.png`;
  
-    let logo;
+    let img;
     let color;
     switch(weather) {
         case 'Clouds':
-            logo = "clouds.gif";
+            img = "clouds.gif";
             color = "#B6B6B6";
             break;
         case 'Clear':
-            logo = "clear.gif";
+            img = "clear.gif";
             color = "#2DA4F7";
             break;
         case 'Rain':
-            logo = "rain.gif";
+            img = "rain.gif";
             color = "#585858";
             break;
         case 'Mist':
-            logo = "mist.gif";
+            img = "mist.gif";
             color = "#8C8C8C";
             break;
         case 'Fog':
-            logo = "fog.gif";
+            img = "fog.gif";
             color = "#B6D0D9";
             break;
         case 'Haze':
-            logo = "fog.gif";
+            img = "fog.gif";
             color = "#B6D0D9";
             break;
         case 'Snow':
-            logo = "snow.gif";
+            img = "snow.gif";
             color = "#F5F7F7";
             break;
         default:
-            logo = null;
+            img = null;
     }
 
     if(data) {
-        let url = `https://maps.google.com/maps?q=${data.name}&t=k&z=6&output=embed`
+        let url = `https://maps.google.com/maps?q=${data.name}&t=k&z=4&output=embed`
         return (
             <div id="data">
                 <div>
@@ -55,13 +55,12 @@ function DisplayResults(props) {
                     <div className="datetime">
                             <span className="city-name"><b>{data.name}, {data.sys.country}</b></span><br/>
                             <span className="small-date">
-                                {new Date().toLocaleDateString("en-US", options)}<br/>
-                                {new Date().toLocaleTimeString()}
+                                {new Date().toLocaleDateString("en-US", options)} {new Date().toLocaleTimeString()}
                             </span>
                     </div>
                     
                     <div>
-                        <img src={logo}  alt="weather logo"/>
+                        <img src={img}  alt="weather logo"/>
                         <p className="big">{Math.floor(data.main.temp)}<sup>o</sup> F </p>
                         <p className="small">{data.weather[0].description}</p>
                     </div>
