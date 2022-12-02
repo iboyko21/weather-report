@@ -1,7 +1,7 @@
 import React from "react";
 import "./weather.css";
 
-function DisplayWeather(props) {
+function DisplayResults(props) {
     const data = props.data;
     const moredata = props.moredata;
     const weather = props.weather;
@@ -44,17 +44,20 @@ function DisplayWeather(props) {
     }
 
     if(data) {
-        let url = `https://maps.google.com/maps?q=${props.city}&t=k&z=8&output=embed`
+        let url = `https://maps.google.com/maps?q=${data.name}&t=k&z=6&output=embed`
         return (
-            <div className="data" id="data">
+            <div id="data">
                 <div>
-                    <iframe src={url} className="map" title="Google Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"/>
+                    <iframe src={url} className="map" title="Google Map" loading="lazy"></iframe>
                 </div>
                 
                 <div id="data-container" style={{backgroundColor: color}}>
                     <div className="datetime">
-                        <b>{data.name}, {data.sys.country}</b><br/>
-                        {new Date().toLocaleDateString("en-US", options)} as of {new Date().toLocaleTimeString()}
+                            <span className="city-name"><b>{data.name}, {data.sys.country}</b></span><br/>
+                            <span className="small-date">
+                                {new Date().toLocaleDateString("en-US", options)}<br/>
+                                {new Date().toLocaleTimeString()}
+                            </span>
                     </div>
                     
                     <div>
@@ -79,7 +82,6 @@ function DisplayWeather(props) {
                         <p className="details">Dusk: {moredata.dusk}</p>
                         <p className="details">Golden Hour: {moredata.golden_hour}</p>
                         <p className="details">Day Length: {moredata.day_length}</p>
-                        {/* <p className="details">Time Zone: {moredata.timezone}</p> */}
                     </div>
                 </div>                
             </div>
@@ -91,4 +93,4 @@ function DisplayWeather(props) {
     }
 }
 
-export default DisplayWeather;
+export default DisplayResults;

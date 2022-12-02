@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import DisplayWeather from "./DisplayWeather";
+import DisplayResults from "./DisplayResults";
 import "./weather.css";
 
 class Weather extends Component {
@@ -10,7 +10,6 @@ class Weather extends Component {
             data: "",
             weather: "",
             moredata: "",
-            mapcity: ""
         };
         this.handleOnChange = this.handleOnChange.bind(this);
         this.handleOnClick = this.handleOnClick.bind(this);
@@ -31,7 +30,6 @@ class Weather extends Component {
                 data: data,
                 weather: data.weather[0].main,
                 moredata: moredata.results,
-                mapcity: data.name
             });
         }
 
@@ -49,15 +47,14 @@ class Weather extends Component {
         return (
             <div className="container">
                 <div className="header">
-                    <h1 class="title title--shadow" data-text="Weather Report">Weather Report</h1>
+                    <h1 className="title">Weather Report</h1>
                         <form>
-                            <input type="text" id="city" className="input" placeholder="enter city" 
+                            <input type="text" id="city" placeholder="enter city" 
                                     value={this.state.city} onChange={this.handleOnChange}/><br/>
                             <button className="button" onClick={this.handleOnClick}>Submit</button>
                         </form>
                 </div>
-                <DisplayWeather data={this.state.data} moredata={this.state.moredata} 
-                                weather={this.state.weather} city={this.state.mapcity}/>
+                <DisplayResults data={this.state.data} moredata={this.state.moredata} weather={this.state.weather}/>
             </div>
         );
     }

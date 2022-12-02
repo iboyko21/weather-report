@@ -11,16 +11,13 @@
     color: #2B598B;
     -webkit-text-stroke: 1px rgb(255, 255, 255);
     -webkit-text-fill-color: #2B598B;
-    font-family: impact;
     font-size: 5rem;
-    line-height: 1;
-    text-align: center;
     text-transform: uppercase;
     font-family: "Roboto", Arial !important;
     text-shadow: 3px 3px 4px rgb(0, 0, 0);
 }
 
-.input {
+#city {
     height: 20px;
     font-size: 20px;
     padding: 5px;
@@ -37,22 +34,26 @@
     font-size: 15px;
 }
 
-.data {
+#data {
     display: flex;
     align-self: center;
-    justify-content: space-around;
-    column-gap: .5rem;
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    /* justify-content: space-between; */
+    column-gap: 2rem;
     background-color: #2b598b;
     border: 5px solid rgb(255, 255, 255);
     margin-top: 3rem;
-    padding: 1em;
-    width: 95%;
+    padding: 1rem;
+    width: 90%;
 }
 
 #data-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 60%;
     padding: 1em;
     border-radius: 10px;
     transition: all 8s ease-in-out;
@@ -69,19 +70,25 @@
     height: 400px;
     border-radius: 10px;
     border: 0;
-    /* transition: all 1s ease-out; */
 }
 
 .datetime {
     flex: 1 100%;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: -1rem;
+    margin-bottom: -2rem;
+}
+
+.city-name {
+    font-size: 30px;
+}
+
+.small-date {
+    font-size: 13px;
+    /* margin: 0; */
 }
 
 .big {
     margin: -2rem 0 0 0;
-    font-size: 60px;
+    font-size: 65px;
     text-shadow: 2px 2px 1px rgb(255, 255, 255);
 }
 
@@ -92,13 +99,15 @@
 }
 
 .details {
-    margin: 1px;
-    font-size: 14px;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
     padding: 5px;
 }
 
-@media all and (max-width: 1240px) {
-    .data {
+/* ------- screen change part -------------  */
+@media all and (max-width: 1355px) {
+    #data {
         flex-direction: column;
         align-items: center;
         width: 50%;
@@ -108,6 +117,7 @@
         row-gap: 1rem;
         flex-wrap: nowrap;
         text-align: center;
+        width: auto;
     }
     #data img {
         margin: 0;
@@ -119,8 +129,11 @@
     .datetime {
         margin: 0;
     }
-    .big{
-        margin: -2rem 0 0 0;
+    .big {
+        margin: 0;
+    }
+    .city-name {
+        font-size: small;
     }
     .details {
         text-align: center;
@@ -142,25 +155,21 @@
     }
 }
 
-/* @media all and (max-width: 450px) {
-    .map {
-        width: 200px;
-        height: 200px;
-    }
-} */
-
-@media all and (max-width: 400px) {
+@media all and (max-width: 405px) {
     .map {
         width: 150px;
         height: 150px;
     }
+    .title {
+        font-size: 3rem;
+    }
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 385px) {
     .map {
         display: none;
     }
-    .data {
+    #data {
         font-size: xx-small;
         width: 70%;
     }
@@ -174,10 +183,7 @@
         margin: 0;
     }
     .details {
-        font-size: x-small;
-    }
-    .title {
-        font-size: 60px;
+        font-size: small;
     }
 }
 
