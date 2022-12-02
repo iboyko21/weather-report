@@ -11,16 +11,18 @@
     color: #2B598B;
     -webkit-text-stroke: 1px rgb(255, 255, 255);
     -webkit-text-fill-color: #2B598B;
-    font-size: 5rem;
+    font-size: 8vw;
     text-transform: uppercase;
     font-family: "Roboto", Arial !important;
     text-shadow: 3px 3px 4px rgb(0, 0, 0);
+    margin: 0;
 }
-
+/* input box  */
 #city {
     height: 20px;
     font-size: 20px;
     padding: 5px;
+    margin-top: 5rem;
 }
 
 .button {
@@ -37,10 +39,7 @@
 #data {
     display: flex;
     align-self: center;
-    /* justify-content: space-around; */
-    /* justify-content: space-evenly; */
     justify-content: center;
-    /* justify-content: space-between; */
     column-gap: 2rem;
     background-color: #2b598b;
     border: 5px solid rgb(255, 255, 255);
@@ -53,60 +52,54 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    width: 60%;
-    padding: 1em;
+    align-items: center;
+    padding: 1rem;
     border-radius: 10px;
     transition: all 8s ease-in-out;
 }
 
 #data img {
-    width: 125px;
-    opacity: 0.8;
-    margin: 0;
+    width: 130px;
+    margin: 0 0 0 2rem;
 }
 
 .map {
-    width: 550px;
-    height: 400px;
-    border-radius: 10px;
+    width: 35vw;
+    height: 45vh;
     border: 0;
+    border-radius: 10px;
 }
 
 .datetime {
     flex: 1 100%;
-    margin-bottom: -2rem;
 }
 
 .city-name {
-    font-size: 30px;
-}
-
-.small-date {
-    font-size: 13px;
-    /* margin: 0; */
+    font-size: 3vw;
 }
 
 .big {
-    margin: -2rem 0 0 0;
-    font-size: 65px;
+    margin: -3rem 0 0 0;
+    font-size: 5vw;
     text-shadow: 2px 2px 1px rgb(255, 255, 255);
 }
 
 .small {
     margin: 0;
     text-align: center;
-    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+    font-size: 1vw;
+    text-shadow: 1px 1px 3px rgb(255, 255, 255);
 }
 
 .details {
     margin: 0;
-    font-size: 18px;
+    font-size: 1vw;
     font-family: 'Courier New', Courier, monospace;
     padding: 5px;
 }
 
 /* ------- screen change part -------------  */
-@media all and (max-width: 1355px) {
+@media all and (max-width: 1200px) {
     #data {
         flex-direction: column;
         align-items: center;
@@ -116,74 +109,37 @@
         flex-direction: column;
         row-gap: 1rem;
         flex-wrap: nowrap;
+        width: 95%;
         text-align: center;
-        width: auto;
+        /* transition: none; */
     }
     #data img {
         margin: 0;
+        width: 12vw;
     }
     .map {
-        width: 360px;
-        height: 320px;
+        width: 50vw;
+        height: 35vh;
     }
     .datetime {
         margin: 0;
     }
     .big {
         margin: 0;
+        font-size: 5vw;
+    }
+    .small{
+        font-size: 3vw;
+    }
+    .small-date {
+        font-size: 2vw;
     }
     .city-name {
-        font-size: small;
+        font-size: 3vw;
     }
     .details {
-        text-align: center;
         padding: 0;
-    }
-}
-
-@media all and (max-width: 760px) {
-    .map {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media all and (max-width: 600px) {
-    .map {
-        width: 225px;
-        height: 225px;
-    }
-}
-
-@media all and (max-width: 405px) {
-    .map {
-        width: 150px;
-        height: 150px;
-    }
-    .title {
-        font-size: 3rem;
-    }
-}
-
-@media all and (max-width: 385px) {
-    .map {
-        display: none;
-    }
-    #data {
-        font-size: xx-small;
-        width: 70%;
-    }
-    #data img {
-        width: auto;
-    }
-    .big {
-        font-size: 20px;
-    }
-    .small {
-        margin: 0;
-    }
-    .details {
-        font-size: small;
+        font-size: 2vw;
     }
 }
 
