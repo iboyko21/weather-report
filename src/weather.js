@@ -8,8 +8,8 @@ class Weather extends Component {
         this.state = {
             city: "",
             data: "",
-            weather: "",
             moredata: "",
+            weather: ""
         };
         this.handleOnChange = this.handleOnChange.bind(this);
         this.handleOnClick = this.handleOnClick.bind(this);
@@ -28,8 +28,8 @@ class Weather extends Component {
 
             this.setState({
                 data: data,
-                weather: data.weather[0].main,
                 moredata: moredata.results,
+                weather: data.weather[0].main
             });
         }
 
@@ -48,11 +48,11 @@ class Weather extends Component {
             <div className="container">
                 <div className="header">
                     <h1 className="title">Weather Report</h1>
-                        <form>
-                            <input type="text" id="city" placeholder="enter city" 
-                                    value={this.state.city} onChange={this.handleOnChange}/><br/>
-                            <button className="button" onClick={this.handleOnClick}>Submit</button>
-                        </form>
+                    <form>
+                        <input type="text" id="city" placeholder="enter city" 
+                                value={this.state.city} onChange={this.handleOnChange}/><br/>
+                        <button className="button" onClick={this.handleOnClick}>Submit</button>
+                    </form>
                 </div>
                 <DisplayResults data={this.state.data} moredata={this.state.moredata} 
                 weather={this.state.weather}/>
