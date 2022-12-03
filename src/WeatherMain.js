@@ -10,6 +10,4 @@ function WeatherMain(props) {
     )
 }
 
-
-
 export default WeatherMain;

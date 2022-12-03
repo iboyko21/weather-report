@@ -5,7 +5,6 @@ import SunData from './SunData';
 
 function MainData(props) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    
     let img;
     let color;
     switch(props.weather) {
@@ -44,10 +43,10 @@ function MainData(props) {
     return (
         <div id="data-container" style={{backgroundColor: color}}>
             <div className="datetime">
-                    <span className="city-name"><b>{props.data.name}, {props.data.sys.country}</b></span><br/>
-                    <span className="small-date">
-                        {new Date().toLocaleDateString("en-US", options)} {new Date().toLocaleTimeString()}
-                    </span>
+                <span className="city-name"><b>{props.data.name}, {props.data.sys.country}</b></span><br/>
+                <span className="small-date">
+                    {new Date().toLocaleDateString("en-US", options)} {new Date().toLocaleTimeString()}
+                </span>
             </div>
             <WeatherMain img={img} data={props.data}/>
             <WeatherData data={props.data}/>
