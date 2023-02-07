@@ -4,12 +4,11 @@ import MainData from "./MainData";
 import "./weather.css";
 
 function DisplayResults(props) {
-    const data = props.data;
     if(props.data) {
         return (
             <div id="data">
-                <GoogleMaps name={data.name} />
-                <MainData data={data} moredata={props.moredata} weather={props.weather} />         
+                <GoogleMaps name={props.data.name} />
+                <MainData data={props.data} sundata={props.sundata} weather={props.weather} />         
             </div>
         );
     } else {

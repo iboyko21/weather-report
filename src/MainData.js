@@ -50,7 +50,7 @@ function MainData(props) {
             </div>
             <WeatherMain img={img} data={props.data}/>
             <WeatherData data={props.data}/>
-            <SunData moredata={props.moredata}/>
+            <SunData sundata={props.sundata}/>
         </div>
     )
 }

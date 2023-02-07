@@ -8,7 +8,7 @@ class Weather extends Component {
         this.state = {
             city: "",
             data: "",
-            moredata: "",
+            sundata: "",
             weather: ""
         };
         this.handleOnChange = this.handleOnChange.bind(this);
@@ -22,13 +22,13 @@ class Weather extends Component {
             .then(res => res.json())
             .then(data => data);
 
-            const moredata = await fetch(`https://api.sunrisesunset.io/json?lat=${data.coord.lat}&lng=${data.coord.lon}&date=today`)
+            const sundata = await fetch(`https://api.sunrisesunset.io/json?lat=${data.coord.lat}&lng=${data.coord.lon}&date=today`)
             .then(res => res.json())
             .then(data => data);
 
             this.setState({
                 data: data,
-                moredata: moredata.results,
+                sundata: sundata.results,
                 weather: data.weather[0].main
             });
         }
@@ -54,8 +54,8 @@ class Weather extends Component {
                         <button className="button" onClick={this.handleOnClick}>Submit</button>
                     </form>
                 </div>
-                <DisplayResults data={this.state.data} moredata={this.state.moredata} 
-                weather={this.state.weather}/>
+                <DisplayResults data={this.state.data} sundata={this.state.sundata} 
+                weather={this.state.weather} />
             </div>
         );
     }
